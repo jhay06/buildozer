@@ -797,7 +797,7 @@ class TargetAndroid(Target):
         options = ["--user"]
         if "VIRTUAL_ENV" in os.environ or "CONDA_PREFIX" in os.environ:
             options = []
-        cmd([executable, "-m", "pip", "install", "-q", *options, *deps])
+        cmd([executable, "-m", "pip", "install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org ", "-q", *options, *deps])
 
     def compile_platform(self):
         app_requirements = self.buildozer.config.getlist(
