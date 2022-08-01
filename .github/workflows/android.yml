@@ -20,8 +20,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Setup environment
       run: |
-        pip install -e .
-        pip install Cython
+        pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org  -e .
+        pip install  --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org Cython
     - run: buildozer --help
     - run: buildozer init
     - name: SDK, NDK and p4a download
